@@ -1,5 +1,5 @@
-## Introduccion
-
+## Introducción
+Se explicarán los código que se realizaron para poder resolver los trabajos de la materia de IA del semestre 9.º del instituto tecnológico de Morelia.
 
 ## Índice   
 1. [Trabajo 1: CNN](#id1)
@@ -21,7 +21,7 @@ En la siguiente imagen se muestra cómo se organizaron las carpetas. Tenemos:
 
 ![Esta es una imagen de ejemplo](img/t1/img1.png)
 
-Vamos a ver el script que nos ayuda a obtener las fotos de los videos, se le pasa el video donde queremos sacar las fotos, despues cuando se oprima la tecla 'a', se toma la captura y se guarda en la ruta especificada.
+Vamos a ver el script que nos ayuda a obtener las fotos de los videos, se le pasa el video donde queremos sacar las fotos, después cuando se oprima la tecla 'a', se toma la captura y se guarda en la ruta especificada.
 
 ```
 import numpy as np
@@ -91,15 +91,15 @@ Despues de esto se tiene que crear el set de entrenamientos y el test, donde se 
 
 ![Esta es una imagen de ejemplo](img/t1/img2.png)
 
-despues de hacer lo anterior se tienen que procesar las imagenes, Hacemos el One-hot Encoding para la red, se crea el set de entrenamiento y validacion, al igual que se crea el modelo CNN. Una vez realizado lo anterior entrenamos el modelo CNN para que pueda clasificar las imagenes. A hora veremos unas graficas para ver si nuestro modelo esta aprendiendo de manera correcta o le falta mas entrenamiento, en el caso de nuestra grafica nos hace falta un poco mas de entrenamiento.
+Después de hacer lo anterior se tienen que procesar las imágenes, Hacemos el One-hot Encoding para la red, se crea el set de entrenamiento y validación, al igual que se crea el modelo CNN. Una vez realizado lo anterior entrenamos el modelo CNN para que pueda clasificar las imágenes. A hora veremos unas gráficas para ver si nuestro modelo está aprendiendo de manera correcta o le falta más entrenamiento, en el caso de nuestra gráfica nos hace falta un poco más de entrenamiento.
 
 ![Esta es una imagen de ejemplo](img/t1/img3.png)
 
-Despues se tiene que hacer que el modelo aprenda de los errores, despues se puede observar una matriz en donde nos indica la precicion con la que puede clasificar una imagen, en nuestro caso nos salio un poco bajo pero funcionable, se puede mejorar el dataset.
+Después se tiene que hacer que el modelo aprenda de los errores, después se puede observar una matriz en donde nos indica la precisión con la que puede clasificar una imagen, en nuestro caso nos salió un poco bajo, pero funcionable, se puede mejorar el dataset.
 
 ![Esta es una imagen de ejemplo](img/t1/img4.png)
 
-Por ultimo probamos y verificamos que el clasificador funcione de una manera correcta, se le pasara una imagen de un incendio con bastante ruido.
+Por último probamos y verificamos que el clasificador funcione de una manera correcta, se le pasara una imagen de un incendio con bastante ruido.
 
 ![Esta es una imagen de ejemplo](img/t1/incendio2.jpg)
 
@@ -114,9 +114,9 @@ Para encontrar a wally tuvimos un orden similar que en el de CNN, como se muestr
 
 ![Esta es una imagen de ejemplo](img/t2/img1.png)
 
-Tenemos una carpeta con imagenes de prueba que se llama buscar, despues la carpeta img contiene imaenes de las positivas y negativas tratadas con recortes, rotaciones de imagenes, cambio del tamaño, etc. por último tenemos la carpeta wally con las imagenes positivas en la carpeta p y las negativas en la carpeta n. A continuacion se mostrara uno de varios codigos que se utilizaron para poder generar nuestras imagenes.
+Tenemos una carpeta con imágenes de prueba que se llama buscar, después la carpeta img contiene imágenes de las positivas y negativas tratadas con recortes, rotaciones de imágenes, cambio del tamaño, etc. por último tenemos la carpeta wally con las imágenes positivas en la carpeta p y las negativas en la carpeta n. A continuación se mostrara uno de varios códigos que se utilizaron para poder generar nuestras imágenes.
 
-Como se puede observar se cargan las imagenes y se llama a la funcion crop_and_resize y como su nombre lo indica hace un recorte de la imagen en este caso de 3 pixeles por cada lado y despues hace que la imagen se convierta de 50x50.
+Como se puede observar se cargan las imágenes y se llama a la función crop_and_resize y como su nombre lo indica hace un recorte de la imagen en este caso de 3 píxeles por cada lado y después hace que la imagen se convierta de 50x50.
 
 ```
 i = 0
@@ -143,9 +143,10 @@ def crop_and_resize(img, i):
     cv.imwrite('wally/p/wallyCrop'+str(i)+'.png', resized_img)
 
 ```
-Para poder generar el dataset se utilizo un programa llamado Cascade Traiger GUI version 3.3.1, se indicara lo que se realizo para poder obtener nuestro archivo xml
+Para poder generar el dataset se utilizó un programa llamado Cascade Traiger GUI version 3.3.1, se indicará lo que se realizó para poder obtener nuestro archivo XML
 
-En el programa que se realizo solo se modificaron las opciones de 2 secciones, la primera fue la general en donde se indico la ruta de las carpetas n y p, despues se le indico que se usaran todas las imagenes positivas que fueron 120 y que las negativas eran 680.
+
+En el programa que se realizó solo se modificaron las opciones de 2 secciones, la primera fue la general en donde se indicó la ruta de las carpetas n y p, después se le indicó que se usaran todas las imágenes positivas que fueron 120 y que las negativas eran 680.
 
 ![Esta es una imagen de ejemplo](img/t2/img2.png)
 
